@@ -1,11 +1,12 @@
 from twilio.rest import Client
-sid='AC23f06e1e176da7ab10fe40b368e4b914'
-authToken='92de112c5b0be86179658a3bcf83e1e9'
-client=Client(sid,authToken)
 
-message=client.messages.create(to='whatsapp:+916388160613',
-            from_='whatsapp:+14155238886',body='hello its mee.')
-
+def message(number,message):
+    sid='AC23f06e1e176da7ab10fe40b368e4b914'
+    authToken='a3dd07a3195cca1d383125605d31b250'
+    client=Client(sid,authToken)
+    
+    message=client.messages.create(to='whatsapp:'+number,
+                from_='whatsapp:+14155238886',body=message)
 # python -m virtualenv env 
 # pip show twilio 
 # if WARNING: Package(s) not found: twilio is output
